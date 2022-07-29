@@ -1,10 +1,12 @@
 import React from 'react';
+import styles from  './signup.module.css'
 import {
     FormControl,
     FormLabel,
     FormHelperText,
     Input,
-    Button
+    Button,
+    Heading
   } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
@@ -27,19 +29,23 @@ const Signup = () => {
     }
   return (
     <div>
- <FormControl> <FormLabel>Name</FormLabel>
+       
+ <FormControl className={styles.fieldcss}> 
+ <Heading colorScheme={"teal"}>Signup</Heading> <FormLabel>Name
+ </FormLabel>
   <Input onChange={handleForm} required name="name" type='text' />
   <FormLabel>Email address</FormLabel>
   <Input onChange={handleForm} required name="email" type='email' />
-  <FormHelperText>We'll never share your email.</FormHelperText>
+  
  
   <FormLabel>Phone</FormLabel>
   <Input onChange={handleForm} required name="phone" type='tel' />
   <FormLabel>Password</FormLabel>
-  <Input onChange={handleForm} required name="password" type='password' />
-  <Button onClick={()=>handleSubmit()}>Signup</Button>
+  <Input onChange={handleForm} required name="password" type='password' /><br></br><br></br>
+  <Link to='/login'><button>Login</button></Link>
+  <Button  onClick={()=>handleSubmit()} className={styles.but}>Signup</Button>
   </FormControl>
-  <Link to='/login'>Login</Link>
+  
     </div>
   )
 }
