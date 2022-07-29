@@ -30,20 +30,20 @@ const Signup = () => {
   return (
     <div>
        
- <FormControl className={styles.fieldcss}> 
- <Heading colorScheme={"teal"}>Signup</Heading> <FormLabel>Name
+ <FormControl isRequired className={styles.fieldcss}> 
+ <Heading className={styles.header} colorScheme={"teal"}>Signup</Heading> <FormLabel>Name
  </FormLabel>
-  <Input onChange={handleForm} required name="name" type='text' />
+  <Input  onChange={handleForm}  name="name" type='text' />
   <FormLabel>Email address</FormLabel>
-  <Input onChange={handleForm} required name="email" type='email' />
+  <Input onChange={handleForm}  name="email" type='email' />
   
  
   <FormLabel>Phone</FormLabel>
-  <Input onChange={handleForm} required name="phone" type='tel' />
+  <Input onChange={handleForm}  name="phone" type='tel' />
   <FormLabel>Password</FormLabel>
-  <Input onChange={handleForm} required name="password" type='password' /><br></br><br></br>
-  <Link to='/login'><button>Login</button></Link>
-  <Button  onClick={()=>handleSubmit()} className={styles.but}>Signup</Button>
+  <Input onChange={handleForm}  name="password" type='password' /><br></br><br></br>
+  <Button type='submit' colorScheme={"teal"} onClick={()=>handleSubmit()} className={styles.but}>Sign up</Button>
+  <Link to='/login'><Button className={styles.but} colorScheme={"teal"} >Already have a account</Button></Link>
   </FormControl>
   
     </div>

@@ -1,16 +1,11 @@
 {
   "users": [
     {
+      "name": "Sudeshna",
       "email": "sudeshna@gmail.com",
-      "name": "Aalesh Patil",
-      "phone": "534657",
-      "password": "123456",
-      "id": 2
-    },
-    [],
-    [],
-    [],
-    [],
-    []
+      "phone": "1234567890",
+      "password": "12345",
+      "id": 1
+    }
   ]
 }

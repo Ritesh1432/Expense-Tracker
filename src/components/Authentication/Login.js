@@ -7,6 +7,7 @@ import {
   Heading
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
+import styles from './signup.module.css';
 
 const Login = () => {
   
@@ -28,27 +29,29 @@ const Login = () => {
 }
 
   const handleSubmit =  () => {
+    console.log(user)
+    console.log(loginUser)
+    console.log("click")
       user.forEach(ele=>{
          if(ele.email===loginUser.email && ele.password===loginUser.password){
+          console.log("auth done")
           alert("Sign in Successfull");
-          localStorage.setItem("loginedUser",ele.name)
          }
       })
     }
   return (
     <>
    
-    <FormControl colorScheme={"whatsapp"} >
+    <FormControl isRequired className={styles.fieldcss} colorScheme={"whatsapp"} >
     <Heading>Login</Heading>
   <FormLabel>Email</FormLabel>
-  <Input onChange={handleForm} required type='email' />
-</FormControl>
-<FormControl>
+  <Input onChange={handleForm} name="email" type='email' />
   <FormLabel>Password</FormLabel>
-  <Input onChange={handleForm} required type='password' />
-  <Button colorScheme={"teal"} onClick={()=>handleSubmit()} >Login</Button>
+  <Input onChange={handleForm} name="password" type='password' />
+  <Button className={styles.but} colorScheme={"teal"} onClick={()=>handleSubmit()} >Login</Button>
+  <Link to='/signup'><Button colorScheme={"teal"} className={styles.but}>Create Account</Button></Link>
 </FormControl>
-<Link to='/signup'>Create Account</Link>
+
     </>
   )
 }

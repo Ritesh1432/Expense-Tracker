@@ -9,7 +9,7 @@ import '../src/App.css'
 
 function App() {
   return (
-    <div>
+    <div className='app'>
      <Routes>
       <Route path="/login" element={<Login/>} />
       <Route path="/signup" element={<Signup/>} />
